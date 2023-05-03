@@ -22,9 +22,17 @@ class ProdutosDestaques extends Produto{
     }
 
     mostrarProdutosDestaque(){
-        return this.nome + this.dataCadastro + this.descricao + this.preco + this.imagemDestaque;
+        return `
+            <h1>${this.nome}</h1>
+            <div>${this.dataCadastro}</div>
+            <p>${this.descricao}</p>
+        `
+        //return this.nome + this.dataCadastro + this.descricao + this.preco + this.imagemDestaque;
     }
 }
 
-const produtos_Destaques = new ProdutosDestaques("Bruno", "06-05-21", "Fortnite player", "100,00", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1t8ou6kjvuJFkHRfBH2KipmH8O2_BBWnRY9FOL194bq6JTNKFyfYOa9p5IFPpnf7gm6c&usqp=CAU");
-console.log(produtos_Destaques.mostrarProdutosDestaque())
+const produtos_Destaques = new ProdutosDestaques("Xbox", "06-05-21", "Console", "R$2120,00", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1t8ou6kjvuJFkHRfBH2KipmH8O2_BBWnRY9FOL194bq6JTNKFyfYOa9p5IFPpnf7gm6c&usqp=CAU");
+
+
+const produtoDestaque = document.getElementById("produto-destaque");
+produtoDestaque.insertAdjacentHTML('afterbegin', produtos_Destaques.mostrarProdutosDestaque());
