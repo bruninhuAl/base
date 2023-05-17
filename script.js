@@ -12,7 +12,7 @@ class Produto {
     }
 }
 
-const produto = new Produto("Bruno", "06-06-21", "Fortnite player", "100,00");
+const produto = new Produto("Xbox", "06-05-21", "Console", "R$2120,00");
 console.log(produto.metodos())
 
 class ProdutosDestaques extends Produto{
@@ -24,6 +24,7 @@ class ProdutosDestaques extends Produto{
     mostrarProdutosDestaque(){
         return `
             <h1>${this.nome}</h1>
+            <img src="${this.imagemDestaque}">
             <div>${this.dataCadastro}</div>
             <p>${this.descricao}</p>
         `
@@ -31,7 +32,7 @@ class ProdutosDestaques extends Produto{
     }
 }
 
-const produtos_Destaques = new ProdutosDestaques("Xbox", "06-05-21", "Console", "R$2120,00", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1t8ou6kjvuJFkHRfBH2KipmH8O2_BBWnRY9FOL194bq6JTNKFyfYOa9p5IFPpnf7gm6c&usqp=CAU");
+const produtos_Destaques = new ProdutosDestaques("Xbox", "06-05-21", "Console", "R$2120,00", "https://assets.xboxservices.com/assets/c7/46/c7465321-acbb-4e4f-9376-cd6005165d0e.png?n=GLP-2020_Feature-1400_XSX_935x1166_03.png");
 
 
 const produtoDestaque = document.getElementById("produto-destaque");
