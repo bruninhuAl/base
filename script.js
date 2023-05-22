@@ -44,8 +44,8 @@ produtoDestaque.insertAdjacentHTML('afterbegin', produtos_Destaques.mostrarProdu
 
 
 
-class ListaProduto extends Produto{
-    constructor(nome, dataCadastro, descricao, preco, imagemDestaque, titulo1, descricao1, preco1, titulo2, descricao2, preco2, titulo3, descricao4, preco3,){
+class ProdutosdaLista extends Produto{
+    constructor(nome, dataCadastro, descricao, preco, imagemDestaque, titulo1, descricao1, preco1, titulo2, descricao2, preco2, titulo3, descricao3, preco3){
         super(nome, dataCadastro, descricao, preco, imagemDestaque)
         this.imagemDestaque = imagemDestaque;
         this.titulo1 = titulo1;
@@ -59,7 +59,7 @@ class ListaProduto extends Produto{
         this.preco3 = preco3;
     }
 
-    mostrarProdutosDaLista(){
+    mostrarListaProduto(){
         return `
         <div class="grid-container">
         <div class="grid-item">
@@ -84,8 +84,8 @@ class ListaProduto extends Produto{
     }
 }
 
-const ListaDeProduto = new ListaProduto("Xbox", "06-05-21", "Console", "R$2120,00", "https://assets.xboxservices.com/assets/c7/46/c7465321-acbb-4e4f-9376-cd6005165d0e.png?n=GLP-2020_Feature-1400_XSX_935x1166_03.png", "xbox", "video game", "R$ 99,00", "xbox", "video game", "R$ 99,00", "xbox", "video game", "R$ 99,00");
+const produtosLista = new ProdutosdaLista("Xbox", "06-05-21", "Console", "R$2120,00", "https://assets.xboxservices.com/assets/c7/46/c7465321-acbb-4e4f-9376-cd6005165d0e.png?n=GLP-2020_Feature-1400_XSX_935x1166_03.png", "xbox", "video game", "R$ 99,00", "ps5", "video game", "R$ 100,00", "nintendo", "video game", "R$ 50,00");
 
 
-const lista123 = document.getElementById("lista-produtos");
-ListaProduto.insertAdjacentHTML('afterbegin', lista123.mostrarProdutosDaLista());
+const listaProdutos = document.getElementById("lista-produtos");
+listaProdutos.insertAdjacentHTML('afterbegin', produtosLista.mostrarListaProduto());
