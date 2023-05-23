@@ -23,10 +23,14 @@ class ProdutosDestaques extends Produto{
 
     mostrarProdutosDestaque(){
         return `
-            <h1>${this.nome}</h1>
-            <img src="${this.imagemDestaque}" style="height: 250px">
-            <div>${this.dataCadastro}</div>
-            <p>${this.descricao}</p>
+        <div class="grid-container2">
+         <div class="grid-item2">
+         <h3>${this.nome}</h3>
+         <img src="${this.imagemDestaque}" style="height: 250px">
+         <p>${this.dataCadastro}</p>
+         <p>${this.descricao}</p>
+         </div>
+        </div>
         `
         //return this.nome + this.dataCadastro + this.descricao + this.preco + this.imagemDestaque;
     }
@@ -44,48 +48,54 @@ produtoDestaque.insertAdjacentHTML('afterbegin', produtos_Destaques.mostrarProdu
 
 
 
-class ProdutosdaLista extends Produto{
-    constructor(nome, dataCadastro, descricao, preco, imagemDestaque, titulo1, descricao1, preco1, titulo2, descricao2, preco2, titulo3, descricao3, preco3){
+class ProdutosListaDestaque extends Produto{
+    constructor(nome, dataCadastro, descricao, preco, imagemDestaque, titulo1, imagemDestaque1, descricao1, preco1, titulo2, imagemDestaque2, descricao2, preco2, titulo3, imagemDestaque3, descricao3, preco3){
         super(nome, dataCadastro, descricao, preco, imagemDestaque)
         this.imagemDestaque = imagemDestaque;
         this.titulo1 = titulo1;
+        this.imagemDestaque1 = imagemDestaque1;
         this.descricao1 = descricao1;
         this.preco1 = preco1;
         this.titulo2 = titulo2;
+        this.imagemDestaque2 = imagemDestaque2;
         this.descricao2 = descricao2;
         this.preco2 = preco2;
         this.titulo3 = titulo3;
+        this.imagemDestaque3 = imagemDestaque3;
         this.descricao3 = descricao3;
         this.preco3 = preco3;
     }
 
-    mostrarListaProduto(){
+    mostrarLista(){
         return `
         <div class="grid-container">
-        <div class="grid-item">
-        <h3>${this.titulo1 = titulo1}</h3>
-        <p>${this.descricao1 = descricao1}</p>
-        <p>${this.preco1 = preco1}</p>
-        </div>
-        <div class="grid-item">
-        <h3>${this.titulo2 = titulo2}</h3>
-        <p>${this.descricao2 = descricao2}</p>
-        <p>${this.preco2 = preco2}</p>
-        </div>
-        <div class="grid-item">
-        <h3>${this.titulo3 = titulo3}</h3>
-        <p>${this.descricao3 = descricao3}</p>
-        <p>${this.preco3 = preco3}</p>
-        </div>
+      <div class="grid-item">
+     <h3>${this.titulo1}</h3>
+     <img src="${this.imagemDestaque1}" style="height: 250px">
+     <p>${this.descricao1}</p>
+     <p>${this.preco1}</p>
+     </div>
+     <div class="grid-item">
+     <h3>${this.titulo2}</h3>
+     <img src="${this.imagemDestaque2}" style="height: 250px">
+     <p>${this.descricao2}</p>
+     <p>${this.preco2}</p>
+     </div>
+       <div class="grid-item">
+       <h3>${this.titulo3}</h3>
+       <img src="${this.imagemDestaque3}" style="height: 250px">
+       <p>${this.descricao3}</p>
+       <p>${this.preco3}</p>
       </div>
+     </div>
       
         `
-        //return this.nome + this.dataCadastro + this.descricao + this.preco + this.imagemDestaque;
+        //return this.titulo + this.imagemDestaque + this.descricao + this.preco;
     }
 }
 
-const produtosLista = new ProdutosdaLista("Xbox", "06-05-21", "Console", "R$2120,00", "https://assets.xboxservices.com/assets/c7/46/c7465321-acbb-4e4f-9376-cd6005165d0e.png?n=GLP-2020_Feature-1400_XSX_935x1166_03.png", "xbox", "video game", "R$ 99,00", "ps5", "video game", "R$ 100,00", "nintendo", "video game", "R$ 50,00");
+const produtos_Lista = new ProdutosListaDestaque("Xbox", "06-05-21", "Console", "R$2120,00", "https://assets.xboxservices.com/assets/c7/46/c7465321-acbb-4e4f-9376-cd6005165d0e.png?n=GLP-2020_Feature-1400_XSX_935x1166_03.png", "Xbox Series X", "https://assets.xboxservices.com/assets/c7/46/c7465321-acbb-4e4f-9376-cd6005165d0e.png?n=GLP-2020_Feature-1400_XSX_935x1166_03.png", "Video game", "R$ 4620,00", "Playstation 5", "https://gmedia.playstation.com/is/image/SIEPDC/ps5-product-thumbnail-01-en-14sep21?$facebook$", "Video game", "R$ 4400,00", "Nintendo Switch", "https://www.tradeinn.com/f/13734/137343676_2/nintendo-switch.jpg", "Video game", "R$ 2079,00");
 
 
-const listaProdutos = document.getElementById("lista-produtos");
-listaProdutos.insertAdjacentHTML('afterbegin', produtosLista.mostrarListaProduto());
+const lista_De_Produtos = document.getElementById("lista-produtos");
+lista_De_Produtos.insertAdjacentHTML('afterbegin', produtos_Lista.mostrarLista());
